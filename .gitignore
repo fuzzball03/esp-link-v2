@@ -1,0 +1,68 @@
+build/
+firmware/
+espfs/mkespfsimage/*.o
+espfs/mkespfsimage/mkespfsimage
+webpages.espfs
+espfs/espfstest/*.o
+espfs/espfstest/espfstest
+html_compressed/
+esp-link.tgz
+tve-patch/
+yui
+espfs/mkespfsimage/mman-win32/mman.o
+esp-link.opensdf
+esp-link.sdf
+espfs/mkespfsimage/mman-win32/libmman.a
+.localhistory/
+local.conf
+*.tgz
+
+# =========================
+# Operating System Files
+# =========================
+
+# WINDOWS
+# =========================
+# Image file caches
+Thumbs.db
+ehthumbs.db
+
+# Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Shortcuts
+*.lnk
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# OSX
+# =========================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk

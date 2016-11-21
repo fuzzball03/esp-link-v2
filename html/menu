@@ -1,0 +1,15 @@
+    {
+      "menu": [
+        "Home", "home.html",
+        "WiFi Station", "wifi/wifiSta.html",
+        "WiFi Soft-AP", "wifi/wifiAp.html",
+        "C Console", "console.html",
+        "Services", "services.html",
+        "REST/MQTT", "mqtt.html",
+        "Debug log", "log.html",
+        "Upgrade Firmware", "flash.html",
+        "Web Server", "web-server.html"
+       ], 
+      "version": "Test",
+      "name": "EspLinkTest"
+     }

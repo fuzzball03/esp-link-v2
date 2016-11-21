@@ -1,0 +1,6 @@
+    {
+      "port0": "23",
+      "port1": "56555",
+      "port0mode": "secure",
+      "port1mode": "disabled"
+     }

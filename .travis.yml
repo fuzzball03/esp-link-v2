@@ -1,0 +1,23 @@
+language: c
+before_install:
+- curl -Ls http://s3.voneicken.com/xtensa-lx106-elf-20160330.tgx | tar Jxf -
+- curl -Ls http://s3.voneicken.com/esp_iot_sdk_v2.0.0.p1.tgx | tar -C .. -Jxf -
+compiler: gcc
+env:
+  matrix:
+script:
+- export XTENSA_TOOLS_ROOT=$PWD/xtensa-lx106-elf/bin/
+- export BRANCH=$TRAVIS_BRANCH
+- echo $TRAVIS_BRANCH
+- make release
+notifications:
+  email: false
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: kiEIjSd56sIvZw9hYO4N1YIge62vqN+LskfTGUYEIp5ePho2qXVTHvjTmrnNxKfvwgKSo24JiWIzCBlL6eHFqIoqlJipJk/Z8Yo23kjqEEV7Ex3aOqMm0eeDGgZhABffQGWKGX3X0a8wL9FdaLjlJJLYvdGnp46hSQGrPoYRhlomz1CwX3OTiy6Jk/b8E7cJ2eqL7dwVPtz1qYQTUNkwoXzNzv3FAa1hi6WmlM8yZOdBsjTJmme6micRz+AcgVxCmA7P/nNl2v+0mz4Lf4Ufhu2nTNXyl4X+WFYrYyPZf9FzvzFdJiFKBs+0JcqZPEibWbv0vVUm79ueMKn7Y+MpxyYzDBnpY0jTxEzp/xz07p44dUrHhjml1cBxjiW1NInXiemXMu7uNO/0AOMCRCt9X5ME5jY3OudMGc40P926duUMn+ydqU1zB4BTEbNLSiVmneN72t4GtmtdrXzEVTzqp0wsxU6kcXoOcOcv3eqw/7l6UGUoyj+9qsBryKIjgci1hbY6fFnj3SclossJ3lgwBDhD/alhR28zOPp7wV9Ewd/hrZ/+fkR1B76MqLOTKOjcowygBox8rorfZ3JqTacl1fGSEPEL82gRb3e7nKAqTAG9T/rDEEwUAv53bkY6bxynYzk5fBEDzWWvPaW1GdGT6Br3vAFg+59bAlDrWt5pJdw=
+  file_glob: true
+  file: esp-link-*.t*gz
+  on:
+    repo: fuzzball03/esp-link-v2
